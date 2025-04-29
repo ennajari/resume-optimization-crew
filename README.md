@@ -1,4 +1,4 @@
-# Resume Optimization with CrewAI
+<!-- # Resume Optimization with CrewAI
 
 ![Resume Optimization System Architecture](docs/architecture-diagam.svg)
 
@@ -83,4 +83,4 @@ The system uses three specialized AI agents:
 
 - [CrewAI Documentation](https://docs.crewai.com)
 - [Community Forum](https://community.crewai.com)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+- [Chat with our docs](https://chatg.pt/DWjSBZn) -->
