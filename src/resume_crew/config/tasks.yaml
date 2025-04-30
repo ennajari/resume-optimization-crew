@@ -102,7 +102,7 @@ research_company_task:
 
 generate_resume_task:
   description: >
-    Using the optimization suggestions and job analysis from previous steps, 
+    Using the optimization suggestions and job analysis from previous steps,
     create a polished resume in markdown format.
     Do not add markdown code blocks like '```'.
 
@@ -134,7 +134,7 @@ generate_resume_task:
 
 generate_report_task:
   description: >
-    Create an executive summary report using data from previous steps. 
+    Create an executive summary report using data from previous steps.
     Format in markdown without code blocks '```'.
 
     1. Data Integration:

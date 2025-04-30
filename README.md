@@ -1,86 +1,132 @@
-<!-- # Resume Optimization with CrewAI
+# Resume Optimization Crew
 
-![Resume Optimization System Architecture](docs/architecture-diagam.svg)
+A powerful AI-powered resume optimization system that helps job seekers tailor their resumes for specific positions, analyze job requirements, research companies, and prepare for interviews.
 
-An AI-powered tool that optimizes your resume for specific job applications using multiple AI agents. Built with [CrewAI](https://crewai.com).
+![CrewAI Logo](docs/crewai_logo.svg)
 
-## What It Does
+## Project Overview
 
-1. **Job Analysis**: Analyzes job requirements, skills, and qualifications
-2. **Resume Scoring**: Calculates match scores for technical skills, experience, and qualifications
-3. **Optimization**: Suggests specific improvements to increase your match score
-4. **Company Research**: Provides company insights for interview preparation
+The Resume Optimization Crew uses a team of specialized AI agents working together to:
 
-## Installation
+1. **Analyze Job Requirements** - Extract and categorize technical skills, soft skills, and experience requirements
+2. **Optimize Resumes** - Provide tailored suggestions to improve content and formatting
+3. **Research Companies** - Gather insights about company culture, recent developments, and interview preparation
+4. **Generate Optimized Resumes** - Create beautifully formatted, ATS-optimized resumes in markdown
+5. **Create Comprehensive Reports** - Produce detailed reports with actionable recommendations
 
-1. Clone the repository and install dependencies:
+## System Architecture
 
-    ```bash
-    git clone https://github.com/tonykipkemboi/resume-optimization-crew.git
-    cd resume-optimization-crew
-    ```
 
-2. Create a virtual environment and install dependencies:
-    ```bash
-    python3 -m venv .venv
-    source .venv/bin/activate
-    crewai install
-    ```
+The project uses [CrewAI](https://github.com/crewai/crewai), a framework for orchestrating role-playing AI agents. These specialized agents work together sequentially to complete the resume optimization process:
 
-## Environment Setup
+- **Resume Analyzer** - Analyzes PDF resumes and provides structured optimization suggestions
+- **Job Analyzer** - Breaks down job descriptions and scores candidate fit
+- **Company Researcher** - Gathers intelligence on target companies
+- **Resume Writer** - Creates beautifully formatted, ATS-optimized resumes
+- **Report Generator** - Produces comprehensive, actionable reports
 
-1. Copy `.env.example` to `.env`:
-    ```bash
-    cp .env.example .env
-    ```
+## Setup and Installation
 
-2. Add your API keys to `.env`:
-    - Required:
-        - `OPENAI_API_KEY`: OpenAI API key
-        - `SERPER_API_KEY`: Serper API key for web search
-    - Optional:
-        - See `.env.example` for additional optional APIs
+### Prerequisites
 
-## Quick Start
+- Python 3.10+ 
+- Google Gemini Pro API key 
+- (Optional) SerperDev API key for enhanced company research
 
-1. Save your resume as PDF in the project root under the `knowledge/` directory:
-    - Feel free to use the sample resume provided in `knowledge/knowledge/CV_Mohan.pdf`
-    - I got it from [here](https://www.hbs.edu/doctoral/Documents/job-market/CV_Mohan.pdf)
+### Installation
 
-2. Fill in the input data in `main.py`:
-    - `job_url`: URL of the job posting (e.g., 'https://www.mckinsey.com/careers/search-jobs/jobs/associate-15178')
-    - `company_name`: Name of the company (e.g., 'Mckinsey & Co.')
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/resume-optimization-crew.git
+   cd resume-optimization-crew
+   ```
 
-3. Run the optimization crew:
-    ```bash
-    crewai run
-    ```
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv .venv
+   # Windows
+   .venv\Scripts\activate
+   # Mac/Linux
+   source .venv/bin/activate
+   ```
 
-## Output Files
+3. Install dependencies:
+   ```bash
+   pip install -e .
+   pip install pyyaml crewai-tools python-dotenv
+   ```
 
-The tool generates three JSON files in the `output` directory:
+4. Create a `.env` file in the project root with your API keys:
+   ```
+   MODEL=gemini/gemini-1.5-flash
+   GEMINI_API_KEY=your_gemini_api_key_here
+   SERPER_API_KEY=your_serper_api_key_here  # Optional
+   ```
 
-- `job_analysis.json`: Detailed job requirements and match scoring
-- `resume_optimization.json`: Specific suggestions to improve your resume
-- `company_research.json`: Company insights for interview prep
+5. Place a resume PDF file in the knowledge directory:
+   ```bash
+   mkdir -p knowledge
+   # Add a resume PDF to the knowledge directory named CV_Mohan.pdf
+   # or modify the code to use your own filename
+   ```
 
-## Architecture
+### Running the Application
 
-The system uses three specialized AI agents:
+Run the application with:
 
-1. **Job Analyzer**: Extracts and analyzes job requirements
-2. **Resume Analyzer**: Scores resume match and suggests improvements
-3. **Company Researcher**: Gathers company information for interviews
+```bash
+python src/resume_crew/main.py
+```
 
-## Requirements
+The process will analyze a job posting for McKinsey & Co, compare it with the provided resume, and generate:
 
-- Python `>= 3.10` and `< 3.13`
-- PDF resume file
-- Job posting URL
-- Company name
+1. Job analysis (output/job_analysis.json)
+2. Resume optimization suggestions (output/resume_optimization.json)
+3. Company research (output/company_research.json)
+4. Optimized resume (output/optimized_resume.md)
+5. Comprehensive report (output/final_report.md)
 
-## Support
+## Customization
 
-- [CrewAI Documentation](https://docs.crewai.com)
-- [Community Forum](https://community.crewai.com)
-- [Chat with our docs](https://chatg.pt/DWjSBZn) -->
+### Using Your Own Resume
+
+To use your own resume, place your PDF file in the `knowledge` directory and update the `resume_path` variable in `src/resume_crew/crew.py`.
+
+### Targeting Different Jobs
+
+Modify the inputs in `src/resume_crew/main.py`:
+
+```python
+inputs = {
+    'job_url': 'https://your-job-posting-url.com',
+    'company_name': 'Target Company Name'
+}
+```
+
+### Configuring Agents and Tasks
+
+Agents and tasks are configured via YAML files in `src/resume_crew/config/`:
+
+- `agents.yaml` - Define roles, goals, and backstories for agents
+- `tasks.yaml` - Define detailed instructions for each task
+
+## Output Examples
+
+### Job Analysis
+
+The job analysis provides detailed insights about job requirements and candidate fit:
+
+```json
+{
+  "technical_skills": ["data analysis", "project management", "consulting"],
+  "soft_skills": ["communication", "leadership", "teamwork"],
+  "experience_requirements": ["2+ years in consulting or related field"],
+  "key_responsibilities": ["client engagement", "problem solving", "analysis"],
+  "match_score": {
+    "overall_match": 85.5,
+    "technical_skills_match": 90.0,
+    "soft_skills_match": 85.0
+  }
+}
+```
+
