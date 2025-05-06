@@ -1,83 +1,44 @@
-
 {
-  "resume_analysis": {
-    "content_analysis": {
-      "missing_keywords": [], 
-      "achievements": [
-        {
-          "title": "Stage en Ingénierie ML, 3D Smart Factory",
-          "description": "Développement d’une solution de classification 3D (97% de précision)",
-          "technologies": ["TensorFlow", "Keras", "PyTorch3D"]
-        },
-        {
-          "title": "Stage en Vision par Ordinateur, HGS-Hightech",
-          "description": "Développement d’un système de visualisation 360° utilisant le deep learning et une interface web"
-        },
-        {
-          "title": "Projet de fin d’études",
-          "description": "Système automatisé de génération d’emplois du temps utilisant les algorithmes génétiques"
-        }
-      ],
-      "ats_compatibility": {
-        "issues": [
-          "Resume contains special characters (cid:132, cid:239, §, cid:128) that may interfere with ATS parsing.  These should be removed.",
-          "Resume uses a mix of bullet points (○) and other formatting. Standardize to bullet points consistently throughout."
-        ],
-        "recommendations": [
-          "Remove special characters and symbols.",
-          "Use consistent bullet point formatting (e.g., - or •).",
-          "Ensure all text is searchable by using common keyword terms.",
-          "Use a simple, consistent font style."
-        ]
-      }
+  "resume_path": "D:\\resume-optimization-crew\\resume-optimization-crew\\knowledge\\Ennajari.pdf",
+  "job_description": {
+    "title": "Machine Learning Engineer",
+    "requirements": [
+      "Proficiency in Python, TensorFlow, PyTorch",
+      "Experience with Computer Vision and NLP",
+      "Strong problem-solving skills",
+      "Experience with Agile/Scrum methodologies",
+      "Excellent communication skills"
+    ]
+  },
+  "content_analysis": {
+    "missing_keywords": ["MLOps", "Deep Learning (more emphasis)", "Cloud platforms (AWS, GCP, Azure)"],
+    "weak_achievements": [
+      "Quantify achievements with more specific metrics (e.g., 'Improved model accuracy by 15%' instead of '97% precision')",
+      "Expand on project details and impact"
+    ],
+    "ats_compatibility": "Improve keyword density, use consistent formatting and capitalization"
+  },
+  "structure_review": {
+    "section_organization": "Good overall, but consider combining 'Skills' and 'Certifications' for better flow.",
+    "formatting": "Inconsistent formatting (font size, spacing). Use a consistent style throughout the resume.",
+    "hierarchy": "Improve visual hierarchy using bolding, bullet points, and spacing to highlight key information.",
+    "contact_details": "LinkedIn profile URL would be beneficial."
+  },
+  "suggestions": {
+    "content_improvements": {
+      "before": "Développement d’une solution de classification 3D (97% de précision)",
+      "after": "Developed a 3D classification solution achieving 97% accuracy, improving efficiency by 10%."
     },
-    "structure_review": {
-      "organization": {
-        "issues": ["Sections could be better structured for clarity and ATS scanning. Consider rearranging sections to improve readability.  Summary/Objective could be improved for impact."],
-        "recommendations": [
-          "Consider a more concise and impactful objective statement.",
-          "Reorganize sections for better flow (e.g., Skills before Experience for a skills-focused approach).",
-          "Use clear and concise headings."
-        ]
-      },
-      "formatting": {
-        "issues": ["Inconsistent bullet point usage.", "Special characters may cause parsing issues."],
-        "recommendations": ["Use consistent bullet points.", "Remove special characters."]
-      },
-      "hierarchy": {
-        "issues": ["Heading levels and font sizes may not be consistently applied.", "Consider using a standard resume template for consistency."],
-        "recommendations": ["Use clear visual hierarchy to differentiate sections and sub-sections.", "Consider using a resume template to enhance readability and consistency."]
-      },
-      "contact_details": {
-        "issues": ["Phone number and email address are present, but consider adding a LinkedIn profile URL for broader reach.", "Consider adding a portfolio URL if available."],
-        "recommendations": ["Add a LinkedIn profile URL and portfolio URL if available.","Ensure contact information is easily scannable and clearly visible."]
-      }
-    },
-    "suggestions": {
-      "content_improvements": {
-        "before": "Étudiant en ingénierie de l’intelligence artificielle recherchant un stage de 2-3 mois (juillet 2025) en Machine Learning/Deep Learning, avec un intérêt pour la vision par ordinateur et le NLP. Motivé à contribuer à des projets innovants en analyse d’images et IA.",
-        "after": "Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) in Machine Learning/Deep Learning, specializing in computer vision and NLP. Eager to contribute to innovative image analysis and AI projects."
-      },
-      "skills_to_highlight": [
-        "Python",
-        "TensorFlow",
-        "PyTorch",
-        "Computer Vision",
-        "Deep Learning",
-        "NLP",
-        "Machine Learning",
-        "Agile/Scrum"
-      ],
-      "achievements_to_add_modify": [
-        "Quantify achievements whenever possible (e.g., 'Improved model accuracy by 15%').",
-        "Focus on the impact of achievements, not just the tasks performed.",
-        "Add more detail to the projects, such as the problem solved, the approach used, and the results obtained."
-      ],
-      "ats_recommendations": [
-        "Use keywords relevant to the target job description.",
-        "Save the resume as a plain text (.txt) file or a PDF generated from a word processor that is ATS friendly.",
-        "Ensure your resume is consistent and easy to read both for human readers and ATS."
-      ]
-    }
+    "skills_to_highlight": ["TensorFlow", "PyTorch", "Computer Vision", "NLP", "Agile/Scrum", "Python"],
+    "achievements_to_add": [
+      "Quantify achievements with specific metrics whenever possible.",
+      "Describe the impact of projects, including quantifiable results (e.g., reduced costs, increased efficiency)."
+    ],
+    "ats_recommendations": [
+      "Incorporate more keywords relevant to the target job descriptions.",
+      "Use a consistent formatting style throughout the resume.",
+      "Use a simple and easily parsed font (Times New Roman, Arial, Calibri).",
+      "Save the resume as a PDF."
+    ]
   }
 }

@@ -1,12 +1,12 @@
-#!/usr/bin/env python
 import sys
 import os
 import warnings
 from pathlib import Path
-from resume_crew.crew import ResumeCrew
+from .crew import ResumeCrew  # Changed from resume_crew.crew to .crew
 from dotenv import load_dotenv
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-# Load environment variables
+# Load environment variables _file__
 load_dotenv()
 
 # Silence SyntaxWarning from pysbd
