@@ -1,17 +1,20 @@
-[project]
+[tool.poetry]
 name = "resume_crew"
 version = "0.1.0"
 description = "Resume optimization crew using crewAI"
-authors = [{ name = "Your Name", email = "you@example.com" }]
-requires-python = ">=3.10,<3.13"
-dependencies = [
-    "crewai[tools]>=0.95.0,<1.0.0",
-    "pydantic>=2.0.0",
-    "crewai-tools>=0.12.1",
-    "python-dotenv>=1.0.0",
-]
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
 
-[project.scripts]
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+crewai = {extras = ["tools"], version = ">=0.95.0,<1.0.0"}
+pydantic = ">=2.0.0"
+crewai-tools = ">=0.12.1"
+python-dotenv = ">=1.0.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
 resume_crew = "resume_crew.main:run"
 run_crew = "resume_crew.main:run"
 train = "resume_crew.main:train"

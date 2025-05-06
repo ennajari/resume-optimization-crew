@@ -14,21 +14,19 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 def run():
     """
-    Run the resume optimization crew.
+    Run the resume optimization crew for McKinsey & Company.
     """
-    # Check if GEMINI_API_KEY is present
     if not os.getenv("GEMINI_API_KEY"):
         print("Error: GEMINI_API_KEY not found in environment variables.")
-        print("Please make sure your .env file is properly set up.")
         sys.exit(1)
         
-    # Create output directory if it doesn't exist
     output_dir = Path(__file__).parent.parent.parent / "output"
     output_dir.mkdir(exist_ok=True)
     
     inputs = {
-        'job_url': 'https://www.mckinsey.com/careers/search-jobs/jobs/associate-15178',
-        'company_name': 'McKinsey & Co.'
+        'job_url': 'https://www.mckinsey.com/careers/search-jobs',
+        'company_name': 'McKinsey & Company',
+        'resume_path': str(Path(__file__).parent.parent.parent / "knowledge" / "Ennajari.pdf")
     }
     
     print(f"Starting resume optimization with inputs: {inputs}")

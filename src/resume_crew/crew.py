@@ -5,6 +5,7 @@ from crewai_tools import SerperDevTool, ScrapeWebsiteTool
 from pathlib import Path
 import yaml
 from typing import Dict, Any
+from .tools.custom_tool import ResumeParserTool
 
 @CrewBase
 class ResumeCrew:
@@ -15,12 +16,10 @@ class ResumeCrew:
 
     def __init__(self) -> None:
         """Initialize the crew with configurations"""
-        # Get the base directory for the project
         self.base_dir = Path(__file__).parent.parent.parent
         self.knowledge_dir = self.base_dir / "knowledge"
         self.resume_path = str(self.knowledge_dir / "Ennajari.pdf")
         
-        # Load configurations
         agents_path = Path(__file__).parent / self.agents_config
         with open(agents_path, 'r') as f:
             self.agents_yaml = yaml.safe_load(f)
@@ -33,7 +32,11 @@ class ResumeCrew:
         """Helper method to convert task YAML to proper dict config"""
         task_data = self.tasks_yaml[task_name]
         return {
-            "description": task_data.get("description", ""),
+            "description": task_data.get("description", "").format(
+                resume_path=self.resume_path,
+                job_url="{job_url}",
+                company_name="{company_name}"
+            ),
             "expected_output": task_data.get("expected_output", ""),
             "agent": task_data.get("agent", None),
             "context": task_data.get("context", [])
@@ -46,6 +49,7 @@ class ResumeCrew:
             goal=self.agents_yaml['resume_analyzer']['goal'],
             backstory=self.agents_yaml['resume_analyzer']['backstory'],
             verbose=True,
+            tools=[ResumeParserTool()],
             llm=LLM(
                 model="gemini/gemini-1.5-flash",
                 api_key=os.getenv("GEMINI_API_KEY")
@@ -59,7 +63,7 @@ class ResumeCrew:
             goal=self.agents_yaml['job_analyzer']['goal'],
             backstory=self.agents_yaml['job_analyzer']['backstory'],
             verbose=True,
-            tools=[ScrapeWebsiteTool()],
+            tools=[ScrapeWebsiteTool(), ResumeParserTool()],
             llm=LLM(
                 model="gemini/gemini-1.5-flash",
                 api_key=os.getenv("GEMINI_API_KEY")
@@ -87,6 +91,7 @@ class ResumeCrew:
             goal=self.agents_yaml['resume_writer']['goal'],
             backstory=self.agents_yaml['resume_writer']['backstory'],
             verbose=True,
+            tools=[ResumeParserTool()],
             llm=LLM(
                 model="gemini/gemini-1.5-flash",
                 api_key=os.getenv("GEMINI_API_KEY")
@@ -109,7 +114,6 @@ class ResumeCrew:
     @task
     def analyze_job_task(self) -> Task:
         task_config = self._create_task_config('analyze_job_task')
-        
         return Task(
             description=task_config["description"],
             expected_output=task_config["expected_output"],
@@ -120,7 +124,6 @@ class ResumeCrew:
     @task
     def optimize_resume_task(self) -> Task:
         task_config = self._create_task_config('optimize_resume_task')
-        
         return Task(
             description=task_config["description"],
             expected_output=task_config["expected_output"],
@@ -132,7 +135,6 @@ class ResumeCrew:
     @task
     def research_company_task(self) -> Task:
         task_config = self._create_task_config('research_company_task')
-        
         return Task(
             description=task_config["description"],
             expected_output=task_config["expected_output"],
@@ -144,7 +146,6 @@ class ResumeCrew:
     @task
     def generate_resume_task(self) -> Task:
         task_config = self._create_task_config('generate_resume_task')
-        
         return Task(
             description=task_config["description"],
             expected_output=task_config["expected_output"],
@@ -156,7 +157,6 @@ class ResumeCrew:
     @task
     def generate_report_task(self) -> Task:
         task_config = self._create_task_config('generate_report_task')
-        
         return Task(
             description=task_config["description"],
             expected_output=task_config["expected_output"],

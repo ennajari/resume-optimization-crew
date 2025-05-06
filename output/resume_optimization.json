@@ -1,105 +1,83 @@
-```json
+
 {
-  "job_title": "Associate",
-  "company": "McKinsey & Company",
-  "job_analysis": {
-    "technical_skills": {
-      "required": [
-        {"skill": "PowerPoint", "importance": 0.8},
-        {"skill": "Excel modeling", "importance": 0.7},
-        {"skill": "Data analysis", "importance": 0.9},
-        {"skill": "Problem-solving", "importance": 0.9}
+  "resume_analysis": {
+    "content_analysis": {
+      "missing_keywords": [], 
+      "achievements": [
+        {
+          "title": "Stage en Ingénierie ML, 3D Smart Factory",
+          "description": "Développement d’une solution de classification 3D (97% de précision)",
+          "technologies": ["TensorFlow", "Keras", "PyTorch3D"]
+        },
+        {
+          "title": "Stage en Vision par Ordinateur, HGS-Hightech",
+          "description": "Développement d’un système de visualisation 360° utilisant le deep learning et une interface web"
+        },
+        {
+          "title": "Projet de fin d’études",
+          "description": "Système automatisé de génération d’emplois du temps utilisant les algorithmes génétiques"
+        }
       ],
-      "nice_to_have": [
-        {"skill": "Programming (Python, R)", "importance": 0.3},
-        {"skill": "SQL", "importance": 0.4}
-      ]
-    },
-    "soft_skills": [
-      "Excellent organization",
-      "Strong communication (verbal and written)",
-      "Rational decision making",
-      "Exceptional time management",
-      "Adaptability",
-      "Teamwork"
-    ],
-    "experience_level": "0-2 years post-graduate degree or equivalent",
-    "education_requirements": "Advanced graduate degree (MBA, PhD) or equivalent work experience",
-    "industry_knowledge": "Broad knowledge across various industries is preferred"
-  },
-  "candidate_resume": {
-    "original_resume": null,  // Placeholder for the actual resume content
-    "optimized_resume": null   // Placeholder for the optimized resume content
-  },
-  "candidate_score": {
-    "technical_skills": {
-      "score": 0,
-      "weighted_average": 0,
-      "details": []
-    },
-    "soft_skills": {
-      "score": 0,
-      "details": []
-    },
-    "experience": {
-      "score": 0,
-      "details": []
-    },
-    "education": {
-      "score": 0,
-      "details": []
-    },
-    "industry_knowledge": {
-      "score": 0,
-      "details": []
-    },
-    "overall_score": 0,
-    "strengths": [],
-    "gaps": []
-  },
-  "optimization_suggestions": {
-    "content_improvements": [
-      {
-        "section": "Skills",
-        "before": null, 
-        "after": "**Technical Skills:** PowerPoint, Excel Modeling (advanced proficiency, including VBA/macros), Data Analysis (statistical modeling, regression analysis, forecasting), Problem-solving (using structured methodologies like Six Sigma/Lean), SQL, Python (data manipulation and visualization libraries like Pandas and Matplotlib). \n**Soft Skills:** Excellent communication (written and verbal), Exceptional time management, Strong teamwork, Adaptability,  Rational decision-making, Proactive problem solver, detail-oriented"
-      },
-      {
-        "section": "Experience",
-        "before": null,
-        "after": "  *  **Quantifiable achievements**  should be added to each role. For example, instead of  'Supported team in project X,' write: 'Supported team in project X, resulting in a 15% improvement in efficiency and a 10% reduction in costs.'  Include keywords from the job description.\n  *  Highlight experience related to data analysis, problem-solving and the specific industries McKinsey works with."
-      },
-      {
-        "section": "Education",
-        "before": null,
-        "after": "Include GPA if above 3.5, relevant coursework (e.g., Econometrics, Statistical Modeling), and any academic honors or awards."
-      },
-      {
-        "section": "Summary/Objective",
-        "before": null,
-        "after": "A compelling summary highlighting relevant skills and experience tailored to McKinsey's Associate role is recommended.  This should showcase your analytical abilities, problem-solving skills, and ambition to contribute to a consulting environment."
+      "ats_compatibility": {
+        "issues": [
+          "Resume contains special characters (cid:132, cid:239, §, cid:128) that may interfere with ATS parsing.  These should be removed.",
+          "Resume uses a mix of bullet points (○) and other formatting. Standardize to bullet points consistently throughout."
+        ],
+        "recommendations": [
+          "Remove special characters and symbols.",
+          "Use consistent bullet point formatting (e.g., - or •).",
+          "Ensure all text is searchable by using common keyword terms.",
+          "Use a simple, consistent font style."
+        ]
       }
-    ],
-    "skills_to_highlight": [
-      "PowerPoint",
-      "Excel modeling",
-      "Data analysis",
-      "Problem-solving",
-      "SQL",
-      "Python"
-    ],
-    "achievements_to_add_or_modify": [
-      "Quantify achievements with numbers and data whenever possible.",
-      "Focus on achievements that demonstrate the skills required for the Associate role at McKinsey.",
-      "Use the STAR method (Situation, Task, Action, Result) to structure your achievement descriptions."
-    ],
-    "ats_optimization_recommendations": [
-      "Use a simple and consistent formatting style throughout the resume.",
-      "Use keywords from the job description throughout the resume, particularly in the skills and experience sections.",
-      "Save the resume as a PDF to maintain formatting and ensure ATS compatibility.",
-      "Avoid using fancy fonts, tables, or graphics that may not render correctly in ATS systems.",
-      "Use a straightforward file name, e.g., YourName_Resume.pdf."
-    ]
+    },
+    "structure_review": {
+      "organization": {
+        "issues": ["Sections could be better structured for clarity and ATS scanning. Consider rearranging sections to improve readability.  Summary/Objective could be improved for impact."],
+        "recommendations": [
+          "Consider a more concise and impactful objective statement.",
+          "Reorganize sections for better flow (e.g., Skills before Experience for a skills-focused approach).",
+          "Use clear and concise headings."
+        ]
+      },
+      "formatting": {
+        "issues": ["Inconsistent bullet point usage.", "Special characters may cause parsing issues."],
+        "recommendations": ["Use consistent bullet points.", "Remove special characters."]
+      },
+      "hierarchy": {
+        "issues": ["Heading levels and font sizes may not be consistently applied.", "Consider using a standard resume template for consistency."],
+        "recommendations": ["Use clear visual hierarchy to differentiate sections and sub-sections.", "Consider using a resume template to enhance readability and consistency."]
+      },
+      "contact_details": {
+        "issues": ["Phone number and email address are present, but consider adding a LinkedIn profile URL for broader reach.", "Consider adding a portfolio URL if available."],
+        "recommendations": ["Add a LinkedIn profile URL and portfolio URL if available.","Ensure contact information is easily scannable and clearly visible."]
+      }
+    },
+    "suggestions": {
+      "content_improvements": {
+        "before": "Étudiant en ingénierie de l’intelligence artificielle recherchant un stage de 2-3 mois (juillet 2025) en Machine Learning/Deep Learning, avec un intérêt pour la vision par ordinateur et le NLP. Motivé à contribuer à des projets innovants en analyse d’images et IA.",
+        "after": "Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) in Machine Learning/Deep Learning, specializing in computer vision and NLP. Eager to contribute to innovative image analysis and AI projects."
+      },
+      "skills_to_highlight": [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "Computer Vision",
+        "Deep Learning",
+        "NLP",
+        "Machine Learning",
+        "Agile/Scrum"
+      ],
+      "achievements_to_add_modify": [
+        "Quantify achievements whenever possible (e.g., 'Improved model accuracy by 15%').",
+        "Focus on the impact of achievements, not just the tasks performed.",
+        "Add more detail to the projects, such as the problem solved, the approach used, and the results obtained."
+      ],
+      "ats_recommendations": [
+        "Use keywords relevant to the target job description.",
+        "Save the resume as a plain text (.txt) file or a PDF generated from a word processor that is ATS friendly.",
+        "Ensure your resume is consistent and easy to read both for human readers and ATS."
+      ]
+    }
   }
 }
-```

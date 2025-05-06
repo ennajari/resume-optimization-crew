@@ -1,7 +1,7 @@
 analyze_job_task:
   description: >
-    Analyze the {job_url} description and score the candidate's fit based on their resume.
-    Output will be saved as structured JSON data.
+    Analyze the {job_url} description and score the candidate's fit based on their resume at {resume_path}.
+    Output structured JSON data.
 
     1. Extract Requirements:
        - Technical skills (required vs nice-to-have)
@@ -10,173 +10,163 @@ analyze_job_task:
        - Education requirements
        - Industry knowledge
 
-    2. Score Technical Skills (35% of total):
-       - For each required skill:
-         * Match Level (0-1): How well does candidate's experience match?
-         * Years Experience: Compare to required years
-         * Context Score: How relevant is their usage of the skill?
-       - Calculate weighted average based on skill importance
+    2. Score Technical Skills (35%):
+       - Match Level (0-1)
+       - Years Experience
+       - Context Score
+       - Weighted average
 
-    3. Score Soft Skills (20% of total):
-       - Identify soft skills from resume
-       - Compare against job requirements
-       - Consider context and demonstration of skills
+    3. Score Soft Skills (20%):
+       - Identify from resume
+       - Compare to requirements
+       - Assess context
 
-    4. Score Experience (25% of total):
+    4. Score Experience (25%):
        - Years of relevant experience
        - Role similarity
        - Industry relevance
-       - Project scope and complexity
+       - Project complexity
 
-    5. Score Education (10% of total):
-       - Degree level match
-       - Field of study relevance
-       - Additional certifications
+    5. Score Education (10%):
+       - Degree match
+       - Field relevance
+       - Certifications
 
-    6. Score Industry Knowledge (10% of total):
-       - Years in similar industry
+    6. Score Industry Knowledge (10%):
+       - Industry experience
        - Domain expertise
-       - Industry-specific achievements
+       - Achievements
 
     7. Calculate Overall Score:
-       - Weighted average of all components
-       - Identify key strengths and gaps
-       - Provide detailed scoring explanation
+       - Weighted average
+       - List strengths and gaps
+       - Explain scoring
 
   expected_output: >
-    Structured JSON data containing job analysis and scoring details according to
-    the JobRequirements model schema.
+    Structured JSON data per JobRequirements model schema.
   agent: job_analyzer
 
 optimize_resume_task:
   description: >
-    Review the provided resume against the job analysis and create structured optimization suggestions.
-    Output will be saved as structured JSON data.
+    Review the resume at {resume_path} against the job analysis and create optimization suggestions.
+    Output structured JSON data.
 
     1. Content Analysis:
-       - Compare resume content with job requirements
-       - Identify missing keywords and skills
-       - Analyze achievement descriptions
-       - Check for ATS compatibility
+       - Compare with job requirements
+       - Identify missing keywords/skills
+       - Analyze achievements
+       - Check ATS compatibility
 
     2. Structure Review:
        - Evaluate section organization
-       - Check formatting consistency
-       - Assess information hierarchy
+       - Check formatting
+       - Assess hierarchy
        - Verify contact details
 
     3. Generate Suggestions:
-       - Content improvements with before/after examples
-       - Skills to highlight based on job match
-       - Achievements to add or modify
-       - ATS optimization recommendations
+       - Content improvements (before/after)
+       - Skills to highlight
+       - Achievements to add/modify
+       - ATS recommendations
 
   expected_output: >
-    Structured JSON data containing detailed optimization suggestions according to
-    the ResumeOptimization model schema.
+    Structured JSON data per ResumeOptimization model schema.
   agent: resume_analyzer
   context: [analyze_job_task]
 
 research_company_task:
   description: >
-    Research {company_name} and prepare the latest (year 2025) and comprehensive analysis.
-    Output will be saved as structured JSON data.
+    Research {company_name} for 2025 and prepare a comprehensive analysis.
+    Output structured JSON data.
 
     1. Company Overview:
-       - Recent developments and news
+       - Recent developments
        - Culture and values
        - Market position
        - Growth trajectory
 
     2. Interview Preparation:
-       - Common interview questions
+       - Common questions
        - Company-specific topics
-       - Recent projects or initiatives
-       - Key challenges and opportunities
+       - Recent projects
+       - Challenges/opportunities
 
   expected_output: >
-    Structured JSON data containing company research results according to
-    the CompanyResearch model schema.
+    Structured JSON data per CompanyResearch model schema.
   agent: company_researcher
   context: [analyze_job_task, optimize_resume_task]
 
 generate_resume_task:
   description: >
-    Using the optimization suggestions and job analysis from previous steps,
-    create a polished resume in markdown format.
-    Do not add markdown code blocks like '```'.
+    Using optimization suggestions and job analysis, create a polished markdown resume from {resume_path}.
+    Avoid markdown code blocks (```).
 
     1. Content Integration:
-       - Incorporate optimization suggestions
-       - Add missing keywords and skills
-       - Enhance achievement descriptions
+       - Apply optimization suggestions
+       - Add keywords/skills
+       - Enhance achievements
        - Ensure ATS compatibility
 
     2. Formatting:
-       - Use proper markdown headers (#, ##, ###)
-       - Apply consistent styling
-       - Create clear section hierarchy
-       - Use bullet points effectively
+       - Use markdown headers (#, ##, ###)
+       - Consistent styling
+       - Clear hierarchy
+       - Effective bullet points
 
     3. Documentation:
-       - Track changes made
+       - Track changes
        - Note preserved elements
-       - Explain optimization choices
+       - Explain optimizations
 
   expected_output: >
-    A beautifully formatted markdown resume document that:
-    - Incorporates all optimization suggestions
-    - Uses proper markdown formatting
-    - Is ATS-friendly
-    - Documents all changes made
+    An ATS-friendly markdown resume incorporating all optimizations, with documented changes.
   agent: resume_writer
   context: [optimize_resume_task, analyze_job_task, research_company_task]
 
 generate_report_task:
   description: >
-    Create an executive summary report using data from previous steps.
-    Format in markdown without code blocks '```'.
+    Create an executive summary report from previous steps’ data.
+    Format in markdown without code blocks (```).
 
     1. Data Integration:
-       - Job analysis and scores
+       - Job analysis scores
        - Resume optimization details
-       - Company research insights
-       - Final resume changes
+       - Company research
+       - Resume changes
 
     2. Report Sections:
        ## Executive Summary
-       - Overall match score and quick wins
-       - Key strengths and improvement areas
-       - Action items priority list
+       - Match score, quick wins
+       - Strengths, improvement areas
+       - Action items
 
        ## Job Fit Analysis
-       - Detailed score breakdown
-       - Skills match assessment
+       - Score breakdown
+       - Skills assessment
        - Experience alignment
 
        ## Optimization Overview
-       - Key resume improvements
-       - ATS optimization results
+       - Resume improvements
+       - ATS results
        - Impact metrics
 
        ## Company Insights
-       - Culture fit analysis
-       - Interview preparation tips
-       - Key talking points
+       - Culture fit
+       - Interview tips
+       - Talking points
 
        ## Next Steps
-       - Prioritized action items
-       - Skill development plan
+       - Action items
+       - Skill development
        - Application strategy
 
     3. Formatting:
-       - Use proper markdown headers
-       - Include relevant emojis
-       - Create tables where appropriate
-       - Use bullet points for scannability
+       - Markdown headers
+       - Emojis for clarity
+       - Tables where appropriate
+       - Bullet points
 
   expected_output: >
-    A comprehensive markdown report that combines all analyses into an
-    actionable, clear document with concrete next steps.
+    A comprehensive markdown report with actionable insights.
   agent: report_generator
   context: [analyze_job_task, optimize_resume_task, research_company_task]
