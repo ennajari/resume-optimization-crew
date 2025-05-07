@@ -1,44 +1,19 @@
 {
-  "resume_path": "D:\\resume-optimization-crew\\resume-optimization-crew\\knowledge\\Ennajari.pdf",
-  "job_description": {
-    "title": "Machine Learning Engineer",
-    "requirements": [
-      "Proficiency in Python, TensorFlow, PyTorch",
-      "Experience with Computer Vision and NLP",
-      "Strong problem-solving skills",
-      "Experience with Agile/Scrum methodologies",
-      "Excellent communication skills"
-    ]
-  },
   "content_analysis": {
-    "missing_keywords": ["MLOps", "Deep Learning (more emphasis)", "Cloud platforms (AWS, GCP, Azure)"],
-    "weak_achievements": [
-      "Quantify achievements with more specific metrics (e.g., 'Improved model accuracy by 15%' instead of '97% precision')",
-      "Expand on project details and impact"
-    ],
-    "ats_compatibility": "Improve keyword density, use consistent formatting and capitalization"
+    "missing_keywords": [],
+    "achievements_to_add": [],
+    "achievements_to_modify": [],
+    "ats_recommendations": []
   },
   "structure_review": {
-    "section_organization": "Good overall, but consider combining 'Skills' and 'Certifications' for better flow.",
-    "formatting": "Inconsistent formatting (font size, spacing). Use a consistent style throughout the resume.",
-    "hierarchy": "Improve visual hierarchy using bolding, bullet points, and spacing to highlight key information.",
-    "contact_details": "LinkedIn profile URL would be beneficial."
+    "section_organization": [],
+    "formatting_issues": [],
+    "hierarchy_issues": [],
+    "contact_details": []
   },
   "suggestions": {
-    "content_improvements": {
-      "before": "Développement d’une solution de classification 3D (97% de précision)",
-      "after": "Developed a 3D classification solution achieving 97% accuracy, improving efficiency by 10%."
-    },
-    "skills_to_highlight": ["TensorFlow", "PyTorch", "Computer Vision", "NLP", "Agile/Scrum", "Python"],
-    "achievements_to_add": [
-      "Quantify achievements with specific metrics whenever possible.",
-      "Describe the impact of projects, including quantifiable results (e.g., reduced costs, increased efficiency)."
-    ],
-    "ats_recommendations": [
-      "Incorporate more keywords relevant to the target job descriptions.",
-      "Use a consistent formatting style throughout the resume.",
-      "Use a simple and easily parsed font (Times New Roman, Arial, Calibri).",
-      "Save the resume as a PDF."
-    ]
+    "content_improvements": [],
+    "skills_to_highlight": [],
+    "ats_recommendations": []
   }
 }

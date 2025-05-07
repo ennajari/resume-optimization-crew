@@ -64,3 +64,7 @@ class CompanyResearch(BaseModel):
     market_position: Dict[str, List[str]] = Field(description="Market position and competitors", default_factory=dict)
     growth_trajectory: List[str] = Field(description="Company growth plans", default_factory=list)
     interview_questions: List[str] = Field(description="Strategic interview questions", default_factory=list)
+    
+    # Model method to convert to valid JSON
+    def json(self, **kwargs):
+        return super().model_dump_json(**kwargs)

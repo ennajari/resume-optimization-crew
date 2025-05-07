@@ -1,6 +1,11 @@
 analyze_job_task:
   description: >
     Analyze the {job_url} description and score the candidate's fit based on their resume at {resume_path}.
+
+    If the job URL is inaccessible, search for similar job descriptions or use the company name to find typical
+    requirements for similar roles in that company. If all else fails, create a realistic job profile based on
+    industry standards.
+
     Output structured JSON data.
 
     1. Extract Requirements:
@@ -42,13 +47,16 @@ analyze_job_task:
        - List strengths and gaps
        - Explain scoring
 
+    IMPORTANT: Format your output as valid JSON wrapped in a code block with triple backticks. Do not include any additional text before or after the JSON. Follow the schema defined in the JobRequirements model.
+
   expected_output: >
-    Structured JSON data per JobRequirements model schema.
+    Structured JSON data per JobRequirements model schema. Ensure your output is valid JSON.
   agent: job_analyzer
 
 optimize_resume_task:
   description: >
     Review the resume at {resume_path} against the job analysis and create optimization suggestions.
+    If the job analysis is incomplete or unavailable, use the resume to identify areas for general improvement.
     Output structured JSON data.
 
     1. Content Analysis:
@@ -68,9 +76,11 @@ optimize_resume_task:
        - Skills to highlight
        - Achievements to add/modify
        - ATS recommendations
+       
+    IMPORTANT: Format your output as valid JSON wrapped in a code block with triple backticks. Do not include any additional text before or after the JSON. Follow the schema defined in the ResumeOptimization model.
 
   expected_output: >
-    Structured JSON data per ResumeOptimization model schema.
+    Structured JSON data per ResumeOptimization model schema. Ensure your output is valid JSON.
   agent: resume_analyzer
   context: [analyze_job_task]
 
@@ -90,9 +100,11 @@ research_company_task:
        - Company-specific topics
        - Recent projects
        - Challenges/opportunities
+       
+    IMPORTANT: Format your output as valid JSON wrapped in a code block with triple backticks. Do not include any additional text before or after the JSON. Follow the schema defined in the CompanyResearch model.
 
   expected_output: >
-    Structured JSON data per CompanyResearch model schema.
+    Structured JSON data per CompanyResearch model schema. Ensure your output is valid JSON.
   agent: company_researcher
   context: [analyze_job_task, optimize_resume_task]
 
@@ -125,7 +137,7 @@ generate_resume_task:
 
 generate_report_task:
   description: >
-    Create an executive summary report from previous steps’ data.
+    Create an executive summary report from previous steps' data.
     Format in markdown without code blocks (```).
 
     1. Data Integration:

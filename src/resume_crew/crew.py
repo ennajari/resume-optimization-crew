@@ -14,11 +14,16 @@ class ResumeCrew:
     agents_config = 'config/agents.yaml'
     tasks_config = 'config/tasks.yaml'
 
-    def __init__(self) -> None:
+    def __init__(self, resume_path=None) -> None:
         """Initialize the crew with configurations"""
         self.base_dir = Path(__file__).parent.parent.parent
         self.knowledge_dir = self.base_dir / "knowledge"
-        self.resume_path = str(self.knowledge_dir / "Ennajari.pdf")
+        
+        # Use provided resume path or default
+        if resume_path:
+            self.resume_path = str(resume_path)
+        else:
+            self.resume_path = str(self.knowledge_dir / "current_resume.pdf")
         
         agents_path = Path(__file__).parent / self.agents_config
         with open(agents_path, 'r') as f:
@@ -27,6 +32,10 @@ class ResumeCrew:
         tasks_path = Path(__file__).parent / self.tasks_config
         with open(tasks_path, 'r') as f:
             self.tasks_yaml = yaml.safe_load(f)
+    
+    def set_resume_path(self, resume_path):
+        """Update the resume path"""
+        self.resume_path = str(resume_path)
 
     def _create_task_config(self, task_name: str) -> Dict[str, Any]:
         """Helper method to convert task YAML to proper dict config"""
@@ -56,14 +65,15 @@ class ResumeCrew:
             )
         )
     
+    
     @agent
     def job_analyzer(self) -> Agent:
         return Agent(
             role=self.agents_yaml['job_analyzer']['role'],
             goal=self.agents_yaml['job_analyzer']['goal'],
-            backstory=self.agents_yaml['job_analyzer']['backstory'],
+            backstory=self.agents_yaml['job_analyzer']['backstory'] + " If a URL cannot be accessed directly, uses search capabilities to find information about the job role and company requirements.",
             verbose=True,
-            tools=[ScrapeWebsiteTool(), ResumeParserTool()],
+            tools=[ScrapeWebsiteTool(), SerperDevTool(), ResumeParserTool()],
             llm=LLM(
                 model="gemini/gemini-1.5-flash",
                 api_key=os.getenv("GEMINI_API_KEY")

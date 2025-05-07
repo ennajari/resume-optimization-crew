@@ -1,49 +1,43 @@
 # Abdellah Ennajari
-AI Engineering Student | ENIAD, Berkane, Morocco | (+212)65579-8315 | abdellahennajari2018@gmail.com | github.com/ennajari | linkedin.com/in/abdellah-ennajari  *(Add LinkedIn Profile URL here)*
+AI Engineering Student | ENIAD | +212 65579-8315 | abdellahennajari2018@gmail.com | github.com/ennajari | LinkedIn Profile URL (if available)
 
 **Objective**
 
-Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) in Machine Learning/Deep Learning, with a focus on Computer Vision and NLP.  Eager to contribute to innovative projects in image analysis and AI.
-
-**Experience**
-
-**2024  ML Engineering Intern | 3D Smart Factory | Casablanca, Morocco**
-
-* Developed a 3D classification solution achieving 97% accuracy, improving efficiency by 10%.  *(Added quantification and impact)*
-* Technologies: TensorFlow, Keras, PyTorch3D
-
-**2024 Computer Vision Intern | HGS-Hightech | Remote**
-
-* Developed a 360° visualization system using deep learning and a web interface. *(Added detail)*
+Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) in Machine Learning/Deep Learning, with a focus on computer vision and NLP.  Eager to contribute to innovative projects involving image analysis and AI solutions.
 
 **Skills**
 
-**Expert:** Python, TensorFlow, PyTorch, Computer Vision (OpenCV), Git,  MLOps *(Added missing keyword)*
+* **Programming Languages:** Python (Expert), C++, Java (Intermediate)
+* **Machine Learning Frameworks:** TensorFlow (Expert), PyTorch (Expert), Scikit-learn (Advanced), Keras (Advanced)
+* **Cloud Platforms:** Azure (Add if applicable from resume or further information)
+* **DevOps Tools:**  (Add tools like Docker, Kubernetes, Terraform, Ansible, etc., if applicable from resume or further information.  Mention experience level)
+* **Databases:** SQL (Intermediate)
+* **Data Visualization:** Power BI (Advanced)
+* **Other Tools/Technologies:** Git (Expert), OpenCV (Expert), Hugging Face (Advanced), NLP tools (specify which), Agile/Scrum (Intermediate), Trello (Intermediate), UML, Merise, Web Development (Intermediate), MLOps (Intermediate)
+* **AI Areas:** Computer Vision, NLP, Machine Learning, Deep Learning, Reinforcement Learning, AI Agents.
 
-**Advanced:** Hugging Face, Scikit-learn, NLP, Machine Learning, Deep Learning, Power BI, AI Agents, Reinforcement Learning
+**Experience**
 
-**Intermediate:** SQL, C++, Java, Agile/Scrum, Trello, UML, Merise, Web Development
+* **2024 -  ML Engineering Intern | 3D Smart Factory | Casablanca**
+    * Developed a 3D classification solution achieving 97% accuracy.
+    * Utilized TensorFlow, Keras, and PyTorch3D.
+
+* **2024 - Computer Vision Intern | HGS-Hightech | Remote**
+    * Developed a 360° visualization system leveraging deep learning and a web interface.
+
 
 **Education**
 
-**2023 – Present**  **AI Engineering, ENIAD, Berkane, Morocco**
-
-* Hands-on projects in ML/DL, Computer Vision, and NLP.
-* Real-world application projects.
-
-**2022 – 2023**  **BSc in Mathematical and Computer Sciences, University Ibn Zohr, Ouarzazate, Morocco**  *(Improved formatting)*
-* *High Honors*
-* Capstone Project: Automated Timetable Generation System using Genetic Algorithms
-
-**2019 – 2020**  **High School Diploma in Physical Sciences, Lycée El Ouroud, Kelaat M’gouna, Morocco**
-
+* **2023 – Present:**  Second Year, AI Engineering | ENIAD | Berkane, Morocco.  Focus on AI and Data Science, including practical projects in ML/DL, Computer Vision, and NLP.
+* **2022 – 2023:** Bachelor of Science in Mathematics and Computer Science | University Ibn Zohr | Ouarzazate, Morocco.  *Mention with Honors (if applicable)*.  Final year project: Automated Timetable Generation System using Genetic Algorithms.
+* **2019 – 2020:** Baccalaureate in Physical Sciences | Lycée El Ouroud | Kelaat M’gouna, Morocco.
 
 **Certifications**
 
-* 2025 Data Analysis, Udemy
-* 2025 TensorFlow 2 QuickStart for Beginners, Udemy
-* 2024 Machine Learning, 365 Data Science
-* 2023 Web Development, YouCode Maroc
+* 2025: Data Analysis | Udemy
+* 2025: TensorFlow 2 QuickStart for Beginners | Udemy
+* 2024: Machine Learning | 365 Data Science
+* 2023: Web Development | YouCode Maroc
 
 **Languages**
 
@@ -52,11 +46,6 @@ Highly motivated AI Engineering student seeking a 2-3 month internship (July 202
 * English (Intermediate - B1)
 
 
-**Soft Skills**
+**Projects** (Add details of relevant projects here, quantifying achievements whenever possible).
 
-* Teamwork
-* Problem-solving
-* Project Management
-
-
-*(Changes documented inline.  All suggestions from the JSON were incorporated.  The resume is now ATS-friendly with improved keyword density, consistent formatting, and enhanced achievements.)*
+**Awards and Recognition** (Add any relevant awards or recognition).
