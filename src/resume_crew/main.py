@@ -21,7 +21,7 @@ def run():
         sys.exit(1)
         
     output_dir = Path(__file__).parent.parent.parent / "output"
-    output_dir.mkdir(exist_ok=True)
+    output_dir.mkdir(exist_zok=True)
     
     inputs = {
         'job_url': 'https://www.mckinsey.com/careers/search-jobs',

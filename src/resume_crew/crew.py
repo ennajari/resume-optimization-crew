@@ -120,7 +120,34 @@ class ResumeCrew:
                 api_key=os.getenv("GEMINI_API_KEY")
             )
         )
+    @agent
+    def cover_letter_writer(self) -> Agent:
+        return Agent(
+            role=self.agents_yaml['cover_letter_writer']['role'],
+            goal=self.agents_yaml['cover_letter_writer']['goal'],
+            backstory=self.agents_yaml['cover_letter_writer']['backstory'],
+            verbose=True,
+            tools=[ResumeParserTool(), SerperDevTool()],
+            llm=LLM(
+                model="gemini/gemini-1.5-flash",
+                api_key=os.getenv("GEMINI_API_KEY")
+            )
+        )
 
+    @task
+    def generate_cover_letter_task(self) -> Task:
+        task_config = self._create_task_config('generate_cover_letter_task')
+        return Task(
+            description=task_config["description"],
+            expected_output=task_config["expected_output"],
+            agent=self.cover_letter_writer(),
+            context=[
+                self.analyze_job_task(), 
+                self.optimize_resume_task(), 
+                self.research_company_task()
+            ],
+            output_file='output/cover_letter.json'
+        )
     @task
     def analyze_job_task(self) -> Task:
         task_config = self._create_task_config('analyze_job_task')
@@ -183,14 +210,16 @@ class ResumeCrew:
                 self.job_analyzer(),
                 self.company_researcher(),
                 self.resume_writer(),
-                self.report_generator()
+                self.report_generator(),
+                self.cover_letter_writer()
             ],
             tasks=[
                 self.analyze_job_task(),
                 self.optimize_resume_task(),
                 self.research_company_task(),
                 self.generate_resume_task(),
-                self.generate_report_task()
+                self.generate_report_task(),
+                self.generate_cover_letter_task()
             ],
             verbose=True,
             process=Process.sequential

@@ -1,87 +1,93 @@
 {
-  "job_description": {
-    "url": "https://www.exakis-nelite.com/offre/consulant-devops-net-azure-toulouse/",
+  "job_title": "D\u00e9veloppeur confirm\u00e9 .NET Azure",
+  "company": "Exakis Nelite",
+  "requirements": {
     "technical_skills": {
       "required": [
-        "Azure",
-        ".NET",
-        "DevOps",
-        "CI/CD",
-        "Infrastructure as Code (IaC)",
-        "Containerization (Docker, Kubernetes)",
-        "Scripting (PowerShell, Bash)"
+        ".NET (Core, Framework, Standard)",
+        "Azure Ecosystem",
+        "ASP.NET MVC",
+        "Object-Oriented Programming",
+        "SQL Server",
+        "Agile",
+        "Git"
       ],
       "nice_to_have": [
+        "Vue.js",
+        "React",
+        "Angular",
+        "TypeScript",
+        "LESS",
+        "Xamarin",
+        "Cosmos DB",
+        "Redis Cache",
+        "MongoDB",
+        "NoSQL",
+        "Graph Databases",
+        "ARM",
+        "Azure Pipelines",
+        "Docker",
+        "Kubernetes",
         "Terraform",
-        "Ansible",
-        "Cloud Security",
-        "Monitoring tools (e.g., Prometheus, Grafana)",
-        "Agile methodologies"
+        "Azure DevOps",
+        "Automated Testing"
       ]
     },
     "soft_skills": [
+      "Autonomy",
+      "Proactiveness",
       "Teamwork",
       "Communication",
-      "Problem-solving",
-      "Adaptability",
-      "Proactiveness"
+      "Problem-solving"
     ],
-    "experience_level": "Mid-level to Senior",
-    "education_requirements": "Bachelor's degree in Computer Science or related field",
-    "industry_knowledge": "Software development, Cloud computing, DevOps"
-  },
-  "candidate_resume": {
-    "path": "D:\\resume-optimization-crew\\resume-optimization-crew\\knowledge\\current_resume.pdf"
+    "experience_level": "3-5 years",
+    "education_requirements": "Engineering degree (implied)",
+    "industry_knowledge": "Microsoft technologies, digital strategies"
   },
   "candidate_scores": {
     "technical_skills": {
-      "match_level": 0.7,
-      "years_experience": 5,
-      "context_score": 0.8,
-      "weighted_average": 0.72
+      "match_level": 0.3,
+      "years_experience": 0,
+      "context_score": 0.2,
+      "weighted_average": 0.175
     },
     "soft_skills": {
       "identified_skills": [
         "Teamwork",
-        "Communication",
         "Problem-solving"
       ],
-      "comparison": "Partially matches job requirements",
-      "context_score": 0.7
+      "match_level": 0.4,
+      "context_score": 0.3,
+      "weighted_average": 0.14
     },
     "experience": {
-      "relevant_experience": 4,
-      "role_similarity": 0.8,
-      "industry_relevance": 1,
-      "project_complexity": 0.7,
-      "weighted_average": 0.8
+      "years_of_relevant_experience": 0,
+      "role_similarity": 0.2,
+      "industry_relevance": 0.1,
+      "project_complexity": 0.3,
+      "weighted_average": 0.15
     },
     "education": {
-      "degree_match": 1,
-      "field_relevance": 1,
-      "certifications": 0.5,
-      "weighted_average": 0.83
+      "degree_match": 0.2,
+      "field_relevance": 0.5,
+      "certifications": 0.1,
+      "weighted_average": 0.08
     },
     "industry_knowledge": {
-      "industry_experience": 1,
-      "domain_expertise": 0.8,
-      "achievements": 0.7,
-      "weighted_average": 0.83
+      "industry_experience": 0.1,
+      "domain_expertise": 0.2,
+      "achievements": 0.4,
+      "weighted_average": 0.1
     },
-    "overall_score": {
-      "weighted_average": 0.78,
-      "strengths": [
-        "Strong Azure and .NET experience",
-        "Relevant DevOps experience",
-        "Good educational background",
-        "Demonstrated soft skills"
-      ],
-      "gaps": [
-        "Limited experience with Kubernetes",
-        "Lack of Terraform experience",
-        "Moderate experience with CI/CD"
-      ],
-      "scoring_explanation": "The candidate demonstrates strong technical skills with proven experience in most required technologies.  However, some gaps exist particularly with more advanced cloud technologies. Soft skills and experience are also strong. Overall, a promising candidate with room for growth and development."
-    }
+    "overall_score": 0.645,
+    "strengths": [
+      "Strong theoretical foundation in AI/ML",
+      "Some relevant skills from projects"
+    ],
+    "gaps": [
+      "Lack of experience with .NET and Azure",
+      "Insufficient professional experience"
+    ],
+    "scoring_explanation": "The candidate possesses some relevant technical skills, notably in AI and machine learning. However, they lack practical experience with the required .NET and Azure technologies. Their education is relevant but does not directly translate to the job requirements.  Further professional experience is needed to increase the overall score."
   }
 }

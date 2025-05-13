@@ -182,3 +182,75 @@ generate_report_task:
     A comprehensive markdown report with actionable insights.
   agent: report_generator
   context: [analyze_job_task, optimize_resume_task, research_company_task]
+
+generate_cover_letter_task:
+  description: >
+    Generate a professional, concise, and fully personalized cover letter for the job opportunity at {company_name}, 
+    using the resume located at {resume_path} and the provided job description.
+    Format the output in markdown, without any code blocks (```) or extra formatting.
+
+    The cover letter must:
+    - Be tailored specifically to the job offer and the company's sector
+    - Reflect real-world application standards
+    - Follow the formal structure of a traditional cover letter
+    - Be written in fluent, professional English
+    - Avoid unnecessary metadata or artificial scores (e.g., "Personalization Score")
+
+    Required Structure (Modeled After a Real-World Example):
+    
+    1. First and Last Name  
+    2. Address  
+    3. Email and Phone Number  
+
+    4. Contact at the Company (if available)  
+    5. Company Name  
+    6. Company Address  
+
+    7. Written in [City], on [Date]  
+
+    8. Subject: Application for the position of [Job Title] – [Reference Number]  
+
+    9. Dear Sir or Madam,  
+
+    10. [Opening paragraph: Mention your interest in the position and the company’s sector.  
+    Show enthusiasm and clear motivation to join.]  
+
+    11. [Second paragraph: Reference your professional experience and education.  
+    Emphasize relevant skills acquired and specific experiences that align with the job offer.]  
+
+    12. [Third paragraph: Demonstrate interest in the company and how joining aligns with your career goals.  
+    Mention personal traits such as adaptability and motivation.]  
+
+    13. [Closing paragraph: Express desire for an interview and thank the recruiter.  
+    Maintain a polite and professional tone.]  
+
+    14. Yours sincerely,  
+    [First and Last Name]
+
+    Guidelines:
+    - Tone: Professional and formal
+    - Style: Clear, concise, and fluent
+    - Length: ~300–400 words (one page max)
+    - Avoid bullet points, scoring metrics, repetition, and generic phrases
+    - Ensure the content is naturally readable by a recruiter
+
+  expected_output: >
+    Valid JSON containing fields:
+      - name
+      - address
+      - email
+      - phone
+      - company_contact
+      - company_name
+      - company_address
+      - date
+      - subject
+      - opening_paragraph
+      - experience_paragraphs
+      - company_alignment_paragraph
+      - closing_paragraph
+    Output must be valid JSON, no extra text or code blocks.
+
+
+  agent: cover_letter_writer
+  context: [analyze_job_task, optimize_resume_task, research_company_task]

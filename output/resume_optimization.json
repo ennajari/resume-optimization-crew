@@ -1,19 +1,88 @@
 {
   "content_analysis": {
-    "missing_keywords": [],
-    "achievements_to_add": [],
-    "achievements_to_modify": [],
-    "ats_recommendations": []
+    "missing_keywords": [
+      ".NET",
+      "Azure",
+      "ASP.NET MVC",
+      "SQL Server",
+      "Agile",
+      "Git",
+      "C#"
+    ],
+    "weaknesses": [
+      "Resume focuses heavily on AI/ML skills, not relevant to the target job.",
+      "Lack of demonstrable experience with required technologies.",
+      "Achievements are not quantified or impactful enough."
+    ],
+    "achievements_to_add_modify": [
+      {
+        "original": "D\u00e9veloppement d\u2019une solution de classification 3D (97% de pr\u00e9cision)",
+        "suggestion": "Quantify impact and add context.  E.g., 'Developed a 3D classification solution resulting in a 97% accuracy improvement, leading to X% reduction in processing time.'"
+      },
+      {
+        "original": "D\u00e9veloppement d\u2019un syst\u00e8me de visualisation 360\u00b0",
+        "suggestion": "Specify technologies used and quantify impact.  E.g., 'Developed a 360\u00b0 visualization system using [technologies], resulting in improved user engagement and X% reduction in data visualization time.'"
+      }
+    ],
+    "ats_compatibility": {
+      "issues": [
+        "Resume may not be ATS-friendly due to formatting and special characters."
+      ],
+      "recommendations": [
+        "Convert to a plain text format before submitting to ATS.",
+        "Use consistent formatting.",
+        "Remove special characters."
+      ]
+    }
   },
   "structure_review": {
-    "section_organization": [],
-    "formatting_issues": [],
-    "hierarchy_issues": [],
-    "contact_details": []
+    "section_organization": "Sections are reasonably organized but could be improved for clarity.",
+    "formatting": "Formatting is inconsistent and uses special characters.",
+    "hierarchy": "Hierarchy is not clearly defined; use bolding and headings.",
+    "contact_details": "Contact details are good, but could be formatted more professionally."
   },
   "suggestions": {
-    "content_improvements": [],
-    "skills_to_highlight": [],
-    "ats_recommendations": []
+    "content_improvements": [
+      {
+        "before": "Objectif Professionnel",
+        "after": "Summary/Professional Summary"
+      },
+      {
+        "before": "Exp\u00e9rience Professionnelle",
+        "after": "Experience"
+      },
+      {
+        "before": "Comp\u00e9tences Techniques",
+        "after": "Skills"
+      },
+      {
+        "before": "\u00c9ducation",
+        "after": "Education"
+      },
+      {
+        "before": "Certifications",
+        "after": "Certifications/Training"
+      },
+      {
+        "before": "Langues",
+        "after": "Languages"
+      },
+      {
+        "before": "Soft Skills",
+        "after": "Soft Skills"
+      }
+    ],
+    "skills_to_highlight": [
+      ".NET (if any experience exists, even basic)",
+      "Azure (if any experience exists)",
+      "SQL Server (if any experience exists)",
+      "Agile methodologies (if applicable)"
+    ],
+    "ats_recommendations": [
+      "Use keywords from the job description.",
+      "Create a text-only version of the resume.",
+      "Use a standard, readable font.",
+      "Keep the resume concise and focused on relevant skills and experience."
+    ]
   }
 }

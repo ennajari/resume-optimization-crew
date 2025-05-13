@@ -68,3 +68,25 @@ class CompanyResearch(BaseModel):
     # Model method to convert to valid JSON
     def json(self, **kwargs):
         return super().model_dump_json(**kwargs)
+
+class CoverLetter(BaseModel):
+    """Model for a generated cover letter with structured sections"""
+    name: str = Field(description="Candidate's full name")
+    address: str = Field(description="Candidate's address")
+    email: str = Field(description="Candidate's email address")
+    phone: str = Field(description="Candidate's phone number")
+    
+    company_contact: str = Field(default="", description="Name of the contact at the company (optional)")
+    company_name: str = Field(description="Company name")
+    company_address: str = Field(default="", description="Company address (optional)")
+    
+    date: str = Field(description="Date of the letter")
+    subject: str = Field(description="Subject line of the application")
+
+    opening_paragraph: str = Field(description="Engaging opening paragraph")
+    experience_paragraphs: List[str] = Field(description="Paragraphs highlighting relevant experience")
+    company_alignment_paragraph: str = Field(description="Paragraph showing alignment with company")
+    closing_paragraph: str = Field(description="Closing paragraph with call to action")
+
+    def json(self, **kwargs):
+        return super().model_dump_json(**kwargs)

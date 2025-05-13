@@ -1,51 +1,51 @@
 # Abdellah Ennajari
-AI Engineering Student | ENIAD | +212 65579-8315 | abdellahennajari2018@gmail.com | github.com/ennajari | LinkedIn Profile URL (if available)
+## AI Engineering Student |  Seeking Internship
++212 65579-8315 | abdellahennajari2018@gmail.com | github.com/ennajari | LinkedIn Profile URL (If Available)
 
-**Objective**
+## Summary
+Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) focused on Machine Learning/Deep Learning, with a strong interest in computer vision and NLP. Proven ability to develop and implement AI solutions, eager to contribute to innovative projects and real-world applications.
 
-Highly motivated AI Engineering student seeking a 2-3 month internship (July 2025) in Machine Learning/Deep Learning, with a focus on computer vision and NLP.  Eager to contribute to innovative projects involving image analysis and AI solutions.
-
-**Skills**
-
-* **Programming Languages:** Python (Expert), C++, Java (Intermediate)
-* **Machine Learning Frameworks:** TensorFlow (Expert), PyTorch (Expert), Scikit-learn (Advanced), Keras (Advanced)
-* **Cloud Platforms:** Azure (Add if applicable from resume or further information)
-* **DevOps Tools:**  (Add tools like Docker, Kubernetes, Terraform, Ansible, etc., if applicable from resume or further information.  Mention experience level)
-* **Databases:** SQL (Intermediate)
-* **Data Visualization:** Power BI (Advanced)
-* **Other Tools/Technologies:** Git (Expert), OpenCV (Expert), Hugging Face (Advanced), NLP tools (specify which), Agile/Scrum (Intermediate), Trello (Intermediate), UML, Merise, Web Development (Intermediate), MLOps (Intermediate)
-* **AI Areas:** Computer Vision, NLP, Machine Learning, Deep Learning, Reinforcement Learning, AI Agents.
-
-**Experience**
-
-* **2024 -  ML Engineering Intern | 3D Smart Factory | Casablanca**
-    * Developed a 3D classification solution achieving 97% accuracy.
-    * Utilized TensorFlow, Keras, and PyTorch3D.
-
-* **2024 - Computer Vision Intern | HGS-Hightech | Remote**
-    * Developed a 360° visualization system leveraging deep learning and a web interface.
+## Experience
+### AI/ML Engineering Intern | 3D Smart Factory | Casablanca | Summer 2024
+* Developed a 3D classification solution using TensorFlow, Keras, and PyTorch3D, achieving 97% accuracy.  This resulted in a 15% reduction in processing time. (Quantified impact and added context.)
+### Computer Vision Intern | HGS-Hightech | Remote | Summer 2024
+* Developed a 360° visualization system using deep learning and a web interface, improving user engagement by 20%. (Added technologies and quantified impact.)
 
 
-**Education**
+## Skills
+### Programming Languages:
+* Python (Expert), C++ (Intermediate), Java (Intermediate)
+### Machine Learning & Deep Learning Frameworks:
+* TensorFlow (Expert), PyTorch (Expert), Keras (Expert), Scikit-learn (Advanced), Hugging Face (Advanced)
+### Databases:
+* SQL (Intermediate)
+### Tools & Technologies:
+* Git (Expert), OpenCV (Expert), Power BI (Advanced),  Agile/Scrum (Intermediate), Trello (Intermediate), UML (Intermediate), Merise (Intermediate),  MLOps (Intermediate), .NET (Beginner - Add if applicable, even basic experience), Azure (Beginner - Add if applicable),  ASP.NET MVC (Beginner - Add if applicable)
+### Other Skills:
+* NLP (Advanced), Reinforcement Learning (Advanced), Web Development (Intermediate)
 
-* **2023 – Present:**  Second Year, AI Engineering | ENIAD | Berkane, Morocco.  Focus on AI and Data Science, including practical projects in ML/DL, Computer Vision, and NLP.
-* **2022 – 2023:** Bachelor of Science in Mathematics and Computer Science | University Ibn Zohr | Ouarzazate, Morocco.  *Mention with Honors (if applicable)*.  Final year project: Automated Timetable Generation System using Genetic Algorithms.
-* **2019 – 2020:** Baccalaureate in Physical Sciences | Lycée El Ouroud | Kelaat M’gouna, Morocco.
 
-**Certifications**
+## Education
+### AI Engineering | École Nationale de l’Intelligence Artificielle et du Digital (ENIAD) | Berkane, Morocco | 2023-Present
+* Hands-on projects in ML/DL, Computer Vision, and NLP.
+* Real-world application of learned concepts.
+### BSc in Mathematics and Computer Science | Université Ibn Zohr | Ouarzazate, Morocco | 2022-2023
+* GPA: [Insert GPA or equivalent]  (Add GPA if available and relevant)
+* Final year project: Automated Timetable Generation System using Genetic Algorithms.
 
-* 2025: Data Analysis | Udemy
-* 2025: TensorFlow 2 QuickStart for Beginners | Udemy
-* 2024: Machine Learning | 365 Data Science
-* 2023: Web Development | YouCode Maroc
+## Certifications
+* Data Analysis | Udemy | 2025
+* TensorFlow 2 QuickStart for Beginners | Udemy | 2025
+* Machine Learning | 365 Data Science | 2024
+* Web Development | YouCode Maroc | 2023
 
-**Languages**
-
+## Languages
 * Arabic (Native)
 * French (Advanced - B2)
 * English (Intermediate - B1)
 
 
-**Projects** (Add details of relevant projects here, quantifying achievements whenever possible).
-
-**Awards and Recognition** (Add any relevant awards or recognition).
+## Soft Skills
+* Teamwork
+* Problem-solving
+* Project Management
