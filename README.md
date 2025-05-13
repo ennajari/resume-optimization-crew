@@ -1,132 +1,213 @@
 # Resume Optimization Crew
 
-A powerful AI-powered resume optimization system that helps job seekers tailor their resumes for specific positions, analyze job requirements, research companies, and prepare for interviews.
+An AI-powered resume optimization system that analyzes job postings, tailors resumes, generates cover letters, and prepares candidates for interviews.
 
-![CrewAI Logo](docs/crewai_logo.svg)
+## 📋 Features
 
-## Project Overview
+- **Resume Analysis**: Extract and evaluate key information from your resume
+- **Job Posting Analysis**: Parse job requirements and match against your qualifications
+- **Company Research**: Gather insights about target companies for better application strategy
+- **Resume Optimization**: Generate tailored versions of your resume for specific job applications
+- **Cover Letter Generation**: Create personalized cover letters highlighting your relevant experience
+- **Final Report**: Comprehensive analysis with actionable insights for your job application
 
-The Resume Optimization Crew uses a team of specialized AI agents working together to:
+## 🔧 Tech Stack
 
-1. **Analyze Job Requirements** - Extract and categorize technical skills, soft skills, and experience requirements
-2. **Optimize Resumes** - Provide tailored suggestions to improve content and formatting
-3. **Research Companies** - Gather insights about company culture, recent developments, and interview preparation
-4. **Generate Optimized Resumes** - Create beautifully formatted, ATS-optimized resumes in markdown
-5. **Create Comprehensive Reports** - Produce detailed reports with actionable recommendations
+- **Framework**: [CrewAI](https://github.com/joaomdmoura/CrewAI) - Orchestrates multiple AI agents
+- **UI**: [Streamlit](https://streamlit.io/) - Provides a clean web interface
+- **LLM**: [Google Gemini 1.5 Flash](https://ai.google.dev/gemini-api) - Powers agent reasoning
+- **PDF Processing**: [pdfplumber](https://github.com/jsvine/pdfplumber) - Extracts text from resumes
 
-## System Architecture
-
-
-The project uses [CrewAI](https://github.com/crewai/crewai), a framework for orchestrating role-playing AI agents. These specialized agents work together sequentially to complete the resume optimization process:
-
-- **Resume Analyzer** - Analyzes PDF resumes and provides structured optimization suggestions
-- **Job Analyzer** - Breaks down job descriptions and scores candidate fit
-- **Company Researcher** - Gathers intelligence on target companies
-- **Resume Writer** - Creates beautifully formatted, ATS-optimized resumes
-- **Report Generator** - Produces comprehensive, actionable reports
-
-## Setup and Installation
+## 🚀 Quick Start
 
 ### Prerequisites
 
-- Python 3.10+ 
-- Google Gemini Pro API key 
-- (Optional) SerperDev API key for enhanced company research
+- Python 3.9+ installed
+- Google Gemini API key
+- Serper API key (for web search capabilities)
 
 ### Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/resume-optimization-crew.git
-   cd resume-optimization-crew
-   ```
+1. **Clone the repository**
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv .venv
-   # Windows
-   .venv\Scripts\activate
-   # Mac/Linux
-   source .venv/bin/activate
-   ```
+```bash
+git clone https://github.com/ennajari/resume-optimization-crew.git
+cd resume-optimization-crew
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -e .
-   pip install pyyaml crewai-tools python-dotenv
-   ```
+2. **Set up a virtual environment**
 
-4. Create a `.env` file in the project root with your API keys:
-   ```
-   MODEL=gemini/gemini-1.5-flash
-   GEMINI_API_KEY=your_gemini_api_key_here
-   SERPER_API_KEY=your_serper_api_key_here  # Optional
-   ```
+```bash
+python -m venv venv
+```
 
-5. Place a resume PDF file in the knowledge directory:
-   ```bash
-   mkdir -p knowledge
-   # Add a resume PDF to the knowledge directory named CV_Mohan.pdf
-   # or modify the code to use your own filename
-   ```
+3. **Activate the virtual environment**
+
+On Windows:
+```bash
+venv\Scripts\activate
+```
+
+On macOS/Linux:
+```bash
+source venv/bin/activate
+```
+
+4. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+5. **Configure environment variables**
+
+Create a `.env` file in the project root with the following content:
+
+```
+MODEL=gemini/gemini-1.5-flash
+GEMINI_API_KEY=your_gemini_api_key_here
+SERPER_API_KEY=your_serper_api_key_here
+CREWAI_TELEMETRY_DISABLED=true
+```
 
 ### Running the Application
 
-Run the application with:
+#### Command Line Interface
+
+Run the main script:
 
 ```bash
-python src/resume_crew/main.py
+python -m src.resume_crew.main
 ```
 
-The process will analyze a job posting for McKinsey & Co, compare it with the provided resume, and generate:
+This will use the default sample resume and target the default job at McKinsey & Company.
 
-1. Job analysis (output/job_analysis.json)
-2. Resume optimization suggestions (output/resume_optimization.json)
-3. Company research (output/company_research.json)
-4. Optimized resume (output/optimized_resume.md)
-5. Comprehensive report (output/final_report.md)
+#### Web Interface
 
-## Customization
+Launch the Streamlit web app:
 
-### Using Your Own Resume
+```bash
+streamlit run app.py
+```
 
-To use your own resume, place your PDF file in the `knowledge` directory and update the `resume_path` variable in `src/resume_crew/crew.py`.
+This will open a browser window with the web interface where you can:
+1. Upload your resume (PDF format)
+2. Enter a job posting URL
+3. Specify the target company
+4. Submit and view the optimization results
+
+## 📁 Project Structure
+
+```
+resume-optimization-crew/
+│
+├── .env                          # Environment variables (API keys)
+├── .gitignore                    # Git ignore file
+├── pyproject.toml                # Python project configuration
+├── README.md                     # Project documentation
+├── uv.lock                       # Dependency lock file
+│
+├── docs/                         # Documentation files
+│
+├── knowledge/                    # Storage for uploaded resumes
+│   └── current_resume.pdf        # Active resume being processed
+│
+├── output/                       # Output directory for generated files
+│   ├── company_research.json     # Company insights
+│   ├── final_report.md           # Complete application strategy
+│   ├── job_analysis.json         # Job requirements breakdown
+│   ├── optimized_resume.md       # Tailored resume in markdown
+│   ├── resume_optimization.json  # Optimization suggestions
+│   └── cover_letter.json         # Generated cover letter
+│
+└── src/                          # Source code
+    └── resume_crew/              # Main package
+        ├── __init__.py
+        ├── crew.py               # CrewAI implementation
+        ├── main.py               # Entry point
+        ├── models.py             # Data models
+        │
+        ├── config/               # Configuration files
+        │   ├── agents.yaml       # Agent definitions
+        │   └── tasks.yaml        # Task definitions
+        │
+        └── tools/                # Custom tools
+            ├── __init__.py
+            └── custom_tool.py    # Resume parser tool
+```
+
+## 🧩 Components
+
+### Agents
+
+The system utilizes six specialized AI agents:
+
+1. **Resume Analyzer**: Evaluates existing resume content and structure
+2. **Job Analyzer**: Extracts key requirements from job postings
+3. **Company Researcher**: Gathers insights about target companies
+4. **Resume Writer**: Creates tailored resume content
+5. **Report Generator**: Compiles comprehensive application strategy
+6. **Cover Letter Writer**: Drafts personalized cover letters
+
+### Workflow
+
+1. Upload your resume (PDF format)
+2. Provide job posting URL and company name
+3. The system processes your information through all agents
+4. View and download your optimized resume, cover letter, and strategic insights
+
+## 📝 Output Files
+
+- **optimized_resume.md**: Your tailored resume in markdown format
+- **final_report.md**: Strategic insights and recommendations
+- **job_analysis.json**: Structured breakdown of job requirements
+- **resume_optimization.json**: Specific improvement suggestions
+- **company_research.json**: Company insights for interview preparation
+- **cover_letter.json**: Personalized cover letter
+
+## 🔍 Customization
+
+### Using a Different Resume
+
+Replace the default resume in the `knowledge` directory or upload your own through the web interface.
 
 ### Targeting Different Jobs
 
-Modify the inputs in `src/resume_crew/main.py`:
+Modify the inputs in `main.py` or use the web interface to specify different job URLs and companies.
 
-```python
-inputs = {
-    'job_url': 'https://your-job-posting-url.com',
-    'company_name': 'Target Company Name'
-}
-```
+## 🛠️ Troubleshooting
 
-### Configuring Agents and Tasks
+### API Key Issues
 
-Agents and tasks are configured via YAML files in `src/resume_crew/config/`:
+If you encounter errors related to API keys:
+- Ensure your `.env` file exists in the project root
+- Verify API keys are correctly formatted with no extra spaces
+- Check that you haven't exceeded API rate limits
 
-- `agents.yaml` - Define roles, goals, and backstories for agents
-- `tasks.yaml` - Define detailed instructions for each task
+### PDF Reading Problems
 
-## Output Examples
+If your resume isn't being properly analyzed:
+- Ensure it's a searchable PDF (not a scanned image)
+- Try re-saving it with a different PDF creator
+- Check for unusual formatting that might confuse the parser
 
-### Job Analysis
+### Output Format Issues
 
-The job analysis provides detailed insights about job requirements and candidate fit:
+If output files contain formatting errors:
+- Check the console for error messages
+- Try with a simpler resume format
+- Ensure job URLs are accessible to the search tool
 
-```json
-{
-  "technical_skills": ["data analysis", "project management", "consulting"],
-  "soft_skills": ["communication", "leadership", "teamwork"],
-  "experience_requirements": ["2+ years in consulting or related field"],
-  "key_responsibilities": ["client engagement", "problem solving", "analysis"],
-  "match_score": {
-    "overall_match": 85.5,
-    "technical_skills_match": 90.0,
-    "soft_skills_match": 85.0
-  }
-}
-```
+## 📣 Contributing
 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👏 Acknowledgments
+
+- [CrewAI](https://github.com/joaomdmoura/CrewAI) for the agent orchestration framework
+- [Streamlit](https://streamlit.io/) for the intuitive web interface
+- [Google Gemini](https://ai.google.dev/gemini-api) for the AI capabilities
